@@ -4,6 +4,5 @@
     .controller('MainCtrl', MainCtrl);
 
   function MainCtrl() {
-    this.msg = "hello";
   }
 })();
