@@ -1,8 +1,10 @@
 (function() {
   angular
     .module('root')
-    .controller('MainCtrl', MainCtrl);
+    .controller('MainCtrl', ['Movie', 'PopUp', MainCtrl]);
 
-  function MainCtrl() {
+  function MainCtrl(Movie, PopUp) {
+    this.allMovies = Movie.all;
+    this.openModal = PopUp.openModal;
   }
 })();

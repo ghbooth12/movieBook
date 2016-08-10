@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('root', ['ui.router', 'firebase'])
+    .module('root', ['ui.router', 'firebase', 'ui.bootstrap'])
     .config(config);
 
   function config($locationProvider, $stateProvider) {
@@ -16,10 +16,10 @@
         controller: 'MainCtrl as main',
         templateUrl: '/templates/main.html'
       })
-      .state('newMovie', {
-        url: '/newMovie',
-        controller: 'NewMovieCtrl as newMovie',
-        templateUrl: '/templates/newMovie.html'
+      .state('userPage', {
+        url: '/userPage',
+        controller: 'UserPageCtrl as userPage',
+        templateUrl: '/templates/userPage.html'
       });
   }
 })();
