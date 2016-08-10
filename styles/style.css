@@ -26,6 +26,10 @@ section {
 
 
 /* ---------- Custom Style ---------- */
+body > .container {
+  max-width: 900px;
+}
+
 .margin-top {
   margin-top: 30px;
 }
