@@ -1,0 +1,19 @@
+<section id='main'>
+  <div class="clearfix">
+    <a ng-click="main.openModal()" class="btn btn-success">Add Movie</a>
+    <form class="pull-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+  </div>
+
+  <div class="clearfix">
+    <div class="col-sm-4 margin-top" ng-repeat="movie in main.allMovies">
+      <img src="/assets/images/film_icon.png" class="poster" alt="movie poster">
+      <h4 ng-bind="movie.title"></h4>
+      <p ng-bind="movie.rating"></p>
+      <p ng-bind="movie.review"></p>
+    </div>
+  </div>
+</section>
