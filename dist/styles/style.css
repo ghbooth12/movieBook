@@ -1,0 +1,47 @@
+/* ---------- Global Style ---------- */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+  margin: 10px 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+section {
+  border: 5px double #eee;
+  border-radius: 10px;
+  padding: 30px 20px;
+}
+
+
+/* ---------- Custom Style ---------- */
+body > .container {
+  max-width: 900px;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+
+#brand {
+  padding: 20px 10px;
+  font-size: 30px;
+  font-family: monospace;
+  display: inline-block;
+}
+
+.poster {
+  width: 100%;
+  display: block;
+}
