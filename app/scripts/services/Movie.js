@@ -15,6 +15,7 @@
           img_src: img.src,
           img_alt: img.alt,
           title: movie.title,
+          // genre: movie.genre,
           rating: movie.rating,
           review: movie.review,
           memo: movie.memo || " ",
