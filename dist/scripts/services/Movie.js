@@ -8,8 +8,12 @@
     var movies = $firebaseArray(ref.child('movies'));
 
     function add(movie) {
+      var img = document.getElementById('movie-poster');
+
       if (movie.title && movie.rating && movie.review) {
         movies.$add({
+          img_src: img.src,
+          img_alt: img.alt,
           title: movie.title,
           rating: movie.rating,
           review: movie.review,

@@ -45,3 +45,9 @@ body > .container {
   width: 100%;
   display: block;
 }
+
+#err-msg {
+  text-align: center;
+  color: red;
+  display: none;
+}
