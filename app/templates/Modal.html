@@ -5,10 +5,7 @@
   <div class="modal-body">
     <div class="clearfix">
       <div class="col-sm-5">
-        <div class="poster">
-          poster here
-          <!-- <poster></poster> -->
-        </div>
+        <img id="movie-poster" class="poster" src="/assets/images/film_icon.png" alt="Default Image">
       </div>
       <div class="col-sm-7">
         <form ng-submit="modal.save()">
@@ -19,6 +16,7 @@
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" class="form-control" ng-model="modal.movieInfo.title">
+            <a ng-click="modal.searchPoster(modal.movieInfo.title)">Search</a>
           </div>
           <div class="form-group">
             <label for="rating">Rating</label>
