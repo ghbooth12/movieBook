@@ -1,9 +1,9 @@
 (function() {
   angular
     .module('root')
-    .controller('ModalCtrl', ['$uibModalInstance', ModalCtrl]);
+    .controller('ModalCtrl', ['$uibModalInstance', 'Poster', ModalCtrl]);
 
-  function ModalCtrl($uibModalInstance) {
+  function ModalCtrl($uibModalInstance, Poster) {
     this.movieInfo = {};
 
     this.save = function() {
@@ -13,5 +13,7 @@
     this.cancel = function() {
       $uibModalInstance.dismiss('cancel');
     };
+
+    this.searchPoster = Poster.search;
   }
 })();
