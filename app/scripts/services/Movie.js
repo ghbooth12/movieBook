@@ -13,9 +13,8 @@
       if (movie.title && movie.rating && movie.review) {
         movies.$add({
           img_src: img.src,
-          img_alt: img.alt,
           title: movie.title,
-          // genre: movie.genre,
+          genre: movie.genre,
           rating: movie.rating,
           review: movie.review,
           memo: movie.memo || " ",
