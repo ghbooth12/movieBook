@@ -60,3 +60,43 @@ body > .container {
   color: red;
   font-size: 90%;
 }
+
+
+/* ---------- Rating Stars ---------- */
+.rating {
+  color: #ccc;
+  font-size: 1.5em;
+  float: left;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px; /* dismiss radio button */
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap; /* never wrap */
+  cursor: pointer;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.rating > input:checked ~ label {
+  color: #ffc107;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9800;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 1.3em;
+  font-weight: lighter;
+}

@@ -12,31 +12,37 @@
         <form ng-submit="modal.save()">
           <div class="form-group">
             <label for="title">Title *</label>
-            <span class="input-err" ng-show="modal.validation.validTitle(modal.movieInfo.title.length) === 'short'">Title is too short.</span>
-            <span class="input-err" ng-show="modal.validation.validTitle(modal.movieInfo.title.length) === 'long'">Title is too long.</span>
+            <span class="input-err" ng-show="modal.validation.validTitle(modal.movieInfo.title) === 'short'">Title is too short.</span>
+            <span class="input-err" ng-show="modal.validation.validTitle(modal.movieInfo.title) === 'long'">Title is too long.</span>
             <div class="input-group">
-              <input type="text" name="title" class="form-control" ng-model="modal.movieInfo.title">
+              <input type="text" id="title" class="form-control" ng-model="modal.movieInfo.title">
               <div class="input-group-addon"><a ng-click="modal.searchPoster(modal.movieInfo)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
             </div>
           </div>
           <div class="form-group">
             <label for="genre">Genre</label>
-            <span class="input-err" ng-show="modal.validation.validGenre(modal.movieInfo.genre.length) === 'long'">Genre is too long.</span>
-            <input type="text" name="genre" class="form-control" ng-model="modal.movieInfo.genre">
+            <span class="input-err" ng-show="modal.validation.validGenre(modal.movieInfo.genre) === 'long'">Genre is too long.</span>
+            <input type="text" id="genre" class="form-control" ng-model="modal.movieInfo.genre">
           </div>
-          <div class="form-group">
-            <label for="rating">Rating *</label>
-            <input type="text" name="rating" class="form-control" ng-model="modal.movieInfo.rating">
+          <div class="form-group clearfix">
+            <label>Rating *</label><br>
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" ng-model="modal.movieInfo.rating"><label for="star5"> 5</label>
+              <input type="radio" id="star4" name="rating" value="4" ng-model="modal.movieInfo.rating"><label for="star4"> 4</label>
+              <input type="radio" id="star3" name="rating" value="3" ng-model="modal.movieInfo.rating"><label for="star3"> 3</label>
+              <input type="radio" id="star2" name="rating" value="2" ng-model="modal.movieInfo.rating"><label for="star2"> 2</label>
+              <input type="radio" id="star1" name="rating" value="1" ng-model="modal.movieInfo.rating"><label for="star1"> 1</label>
+            </div>
           </div>
           <div class="form-group">
             <label for="review">Review *</label>
-            <span class="input-err" ng-show="modal.validation.validReview(modal.movieInfo.review.length) === 'short'">Review is too short.</span>
-            <span class="input-err" ng-show="modal.validation.validReview(modal.movieInfo.review.length) === 'long'">Review is too long.</span>
-            <input type="textarea" name="review" class="form-control" ng-model="modal.movieInfo.review">
+            <span class="input-err" ng-show="modal.validation.validReview(modal.movieInfo.review) === 'short'">Review is too short.</span>
+            <span class="input-err" ng-show="modal.validation.validReview(modal.movieInfo.review) === 'long'">Review is too long.</span>
+            <input type="textarea" id="review" class="form-control" ng-model="modal.movieInfo.review">
           </div>
           <div class="form-group">
             <label for="memo">Memo</label>
-            <textarea name="memo" rows="4" class="form-control" ng-model="modal.movieInfo.memo"></textarea>
+            <textarea id="memo" rows="4" class="form-control" ng-model="modal.movieInfo.memo"></textarea>
           </div>
           <div class="pull-right">
             <a ng-click="modal.cancel()">Cancel</a>

@@ -12,7 +12,11 @@
     <div class="col-sm-4 movie-item" ng-repeat="movie in main.allMovies | search : main.searchWord">
       <img class="poster" src="{{ movie.img_src }}" alt="{{ movie.title }}">
       <h4 ng-bind="movie.title | truncate : 'h'"></h4>
-      <p ng-bind="movie.rating"></p>
+      <p class="star" ng-show="movie.rating == 5">&starf; &starf; &starf; &starf; &starf;</p>
+      <p class="star" ng-show="movie.rating == 4">&starf; &starf; &starf; &starf; &star;</p>
+      <p class="star" ng-show="movie.rating == 3">&starf; &starf; &starf; &star; &star;</p>
+      <p class="star" ng-show="movie.rating == 2">&starf; &starf; &star; &star; &star;</p>
+      <p class="star" ng-show="movie.rating == 1">&starf; &star; &star; &star; &star;</p>
       <p ng-bind="movie.genre | truncate : 'p'"></p>
       <p ng-bind="movie.review | truncate : 'p'"></p>
     </div>
