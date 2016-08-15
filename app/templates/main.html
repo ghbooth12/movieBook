@@ -9,12 +9,12 @@
   </div>
 
   <div class="clearfix">
-    <div class="col-sm-4 margin-top" ng-repeat="movie in main.allMovies | search : main.searchWord">
+    <div class="col-sm-4 movie-item" ng-repeat="movie in main.allMovies | search : main.searchWord">
       <img class="poster" src="{{ movie.img_src }}" alt="{{ movie.title }}">
-      <h4 ng-bind="movie.title"></h4>
+      <h4 ng-bind="movie.title | truncate : 'h'"></h4>
       <p ng-bind="movie.rating"></p>
-      <p ng-bind="movie.genre"></p>
-      <p ng-bind="movie.review"></p>
+      <p ng-bind="movie.genre | truncate : 'p'"></p>
+      <p ng-bind="movie.review | truncate : 'p'"></p>
     </div>
   </div>
 </section>
