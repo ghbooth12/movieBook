@@ -5,6 +5,7 @@
 
   function ModalCtrl($uibModalInstance, Poster, Validation) {
     this.movieInfo = {};
+    this.movieInfo.errForMany = false;
 
     this.save = function() {
       $uibModalInstance.close(this.movieInfo);
