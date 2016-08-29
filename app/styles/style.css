@@ -46,7 +46,8 @@ body > .container {
   display: block;
 }
 
-#err-msg {
+#err-not-found,
+#err-for-many {
   display: none;
 }
 

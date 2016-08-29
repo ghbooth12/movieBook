@@ -5,12 +5,12 @@
   <div class="modal-body">
     <div class="clearfix">
       <div class="col-sm-5">
-        <p id="err-msg">Movie Not Found</p>
+        <p id="err-not-found">Movie Not Found</p>
         <img id="movie-poster" class="poster" src="/assets/images/film_icon.png" alt="Default Image">
         <h5>Result</h5>
         <div id="result-group">
         </div>
-        <p ng-show="modal.movieInfo.errForMany">Multiple movies are found. Please enter the correct title.</p>
+        <p id="err-for-many">Multiple movies are found. Please enter the correct title.</p>
       </div>
       <div class="col-sm-7">
         <form ng-submit="modal.save()">
