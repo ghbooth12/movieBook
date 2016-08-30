@@ -9,8 +9,14 @@
   </head>
   <body>
     <div class="container">
-      <a id='brand' ui-sref='main'>Moviebook</a>
-      <a ui-sref="userPage">My Page</a>
+      <div class="row">
+        <div class="col-sm-4">
+          <a id='brand' ui-sref='main'>Moviebook</a>
+        </div>
+        <div class="col-sm-8">
+          <user-auth></user-auth>
+        </div>
+      </div>
 
       <ui-view></ui-view>
     </div>
@@ -27,6 +33,7 @@
     <script src="/scripts/services/Poster.js"></script>
     <script src="/scripts/services/Genre.js"></script>
     <script src="/scripts/services/Validation.js"></script>
+    <script src="/scripts/directives/userAuth.js"></script>
     <script src="/scripts/filters/search.js"></script>
     <script src="/scripts/filters/truncate.js"></script>
     <script src="/scripts/controllers/MainCtrl.js"></script>
