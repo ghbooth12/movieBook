@@ -1,9 +1,9 @@
 (function() {
   angular
     .module('root')
-    .directive('userAuth', [userAuth]);
+    .directive('userAuth', ['PopUp', userAuth]);
 
-  function userAuth() {
+  function userAuth(PopUp) {
 
 
     return {
@@ -12,6 +12,11 @@
       restrict: 'E',
       scope: {},
       link: function(scope, element, attrs) {
+        scope.registerUser = PopUp.registerUser;
+
+        scope.logIn = function(email, password) {
+
+        };
 
       } // end link
     }; // end return

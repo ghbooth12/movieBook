@@ -143,3 +143,19 @@ body > .container {
   padding: 0 7px;
   height: 3rem;
 }
+
+#user-auth a {
+  font-size: 90%;
+  padding: 6px 7px;
+  height: 3rem;
+}
+
+/* Modal: Register User */
+#register-user {
+  padding: 0 20px;
+}
+
+#register-user .form-group .row > div {
+  text-align: right;
+  color: #777;
+}
