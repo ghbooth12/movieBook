@@ -43,6 +43,27 @@
       }
     };
 
+    validation.matchPassword = function(str1, str2) {
+      if (str1 && str2) {
+        if (str1 === str2) {
+          return 'valid';
+        } else {
+          return 'not match';
+        }
+      }
+    }
+
+    validation.validPassword = function(string) {
+      if (string) {
+        var length = string.length;
+        if (length < 4) {
+          return 'short';
+        } else {
+          return 'valid';
+        }
+      }
+    }
+
     return validation;
   }
 })();

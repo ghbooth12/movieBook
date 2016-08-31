@@ -1,10 +1,12 @@
 (function() {
   angular
     .module('root')
-    .factory('PopUp', ['$uibModal', 'Movie', PopUp]);
+    .factory('PopUp', ['$uibModal', 'Movie', 'User', PopUp]);
 
-  function PopUp($uibModal, Movie) {
-    var openModal = function() {
+  function PopUp($uibModal, Movie, User) {
+    var popUp = {};
+
+    popUp.openModal = function() {
       $uibModal
         .open({
           templateUrl: 'templates/modal.html',
@@ -15,6 +17,17 @@
         });
     };
 
-    return {openModal: openModal};
+    popUp.registerUser = function() {
+      $uibModal
+        .open({
+          templateUrl: 'templates/registerUser.html',
+          controller: 'RegisterUserCtrl as register'
+        })
+        .result.then(function(userInfo) {
+          User.register(userInfo);
+        });
+    };
+
+    return popUp;
   }
 })();
