@@ -24,6 +24,17 @@
       }
     };
 
+    user.checkForMember = function(email, password) {
+      var member;
+
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].email === email && users[i].password === password) {
+          member = users[i].email;
+        }
+      }
+      return member;
+    }
+
     return user;
   }
 })();

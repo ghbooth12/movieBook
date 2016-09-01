@@ -1,14 +1,21 @@
 <div id="user-auth">
-  <form class="form-inline" ng-submit="createUser(email, password)">
-    <div class="form-group">
-      <label class="sr-only" for="email">Email address</label>
-      <input type="email" id="email" class="form-control" placeholder="Email" ng-model="email">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="password">Password</label>
-      <input type="password" id="password" class="form-control" placeholder="Password" ng-model="password">
-    </div>
-    <input type="submit" id="sign" class="btn btn-default" value="Sign In">
-    <a ng-click="registerUser()" class="btn btn-default">Register</a>
-  </form>
+  <div ng-show="signedOut">
+    <form class="form-inline" ng-submit="logIn(email, password)">
+      <div class="form-group">
+        <label class="sr-only" for="email">Email address</label>
+        <input type="email" id="email" class="form-control" placeholder="Email" ng-model="email">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" ng-model="password">
+      </div>
+      <input type="submit" id="sign" class="btn btn-default" value="Sign In">
+      <a ng-click="registerUser()" class="btn btn-default">Register</a>
+    </form>
+    <span class="input-err" ng-show="logInErr">Email or Password Not Found</span>
+  </div>
+  <div ng-show="!signedOut">
+    <a class="btn btn-primary" ui-sref="userPage">My Page</a>
+    <a class="btn btn-default" ng-click="logOut()">Sign Out</a>
+  </div>
 </div>
