@@ -13,10 +13,30 @@
         <div class="col-sm-4">
           <a id='brand' ui-sref='main'>Moviebook</a>
         </div>
-        <div class="col-sm-8">
-          <user-auth></user-auth>
-        </div>
-      </div>
+        <div class="col-sm-8" ng-controller="SignBtnCtrl as signBtn">
+          <div id="user-auth">
+            <div id="signInbtn">
+              <form class="form-inline" ng-submit="signBtn.userAuth.logIn(signBtn.email, signBtn.password)">
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email address</label>
+                  <input type="email" id="email" class="form-control" placeholder="Email" ng-model="signBtn.email">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="password">Password</label>
+                  <input type="password" id="password" class="form-control" placeholder="Password" ng-model="signBtn.password">
+                </div>
+                <input type="submit" id="sign" class="btn btn-default" value="Sign In">
+                <a ng-click="signBtn.registerUser()" class="btn btn-default">Register</a>
+              </form>
+              <span id="logInErr" class="input-err">Email or Password Not Found</span>
+            </div> <!-- /#signInbtn -->
+            <div id="signOutbtn">
+              <a class="btn btn-primary" ui-sref="userPage">My Page</a>
+              <a class="btn btn-default" ng-click="signBtn.userAuth.logOut()">Sign Out</a>
+            </div> <!-- /#signOutbtn -->
+          </div> <!-- /#user-auth -->
+        </div> <!-- /.col-sm-8 -->
+      </div> <!-- /.row -->
 
       <ui-view></ui-view>
     </div>
@@ -26,20 +46,23 @@
     <script src="//cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
     <script src="//cdn.rawgit.com/angular-ui/ui-router/0.2.18/release/angular-ui-router.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-cookies.js"></script>
 
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/UserCookies.js"></script>
     <script src="/scripts/services/Movie.js"></script>
     <script src="/scripts/services/PopUp.js"></script>
     <script src="/scripts/services/Poster.js"></script>
     <script src="/scripts/services/Genre.js"></script>
     <script src="/scripts/services/Validation.js"></script>
     <script src="/scripts/services/User.js"></script>
-    <script src="/scripts/directives/userAuth.js"></script>
+    <script src="/scripts/services/UserAuth.js"></script>
     <script src="/scripts/filters/search.js"></script>
     <script src="/scripts/filters/truncate.js"></script>
     <script src="/scripts/controllers/MainCtrl.js"></script>
     <script src="/scripts/controllers/ModalCtrl.js"></script>
     <script src="/scripts/controllers/UserPageCtrl.js"></script>
     <script src="/scripts/controllers/RegisterUserCtrl.js"></script>
+    <script src="/scripts/controllers/SignBtnCtrl.js"></script>
   </body>
 </html>

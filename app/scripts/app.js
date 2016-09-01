@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('root', ['ui.router', 'firebase', 'ui.bootstrap'])
+    .module('root', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
     .config(config);
 
   function config($locationProvider, $stateProvider) {

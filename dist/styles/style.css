@@ -159,3 +159,9 @@ body > .container {
   text-align: right;
   color: #777;
 }
+
+/* User Signed In & Out */
+#logInErr,
+#signOutbtn {
+  display: none;
+}
