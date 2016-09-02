@@ -1,10 +1,28 @@
+<div class="well">
+  <h4><span class="glyphicon glyphicon-user"></span> Email Address: {{ userPage.currentUser }}</h4>
+  <p style="font-size: 2rem;">You have <b>{{ userPage.movieArr.length }}</b> movie reviews.</p>
+</div>
+
 <section id='userPage'>
+  <div class="clearfix top-bar">
+    <form class="pull-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search by title" ng-model="userPage.searchWord">
+      </div>
+    </form>
+  </div>
+
   <div class="clearfix">
-    <div class="col-sm-5">
-      User Page
-    </div>
-    <div class="col-sm-7">
-      User Page
+    <div class="col-sm-4 movie-item" ng-repeat="movie in userPage.movieArr | search : userPage.searchWord">
+      <img class="poster" src="{{ movie.img_src }}" alt="{{ movie.title }}">
+      <h4 ng-bind="movie.title | truncate : 'h'"></h4>
+      <p class="star" ng-show="movie.rating == 5">&starf; &starf; &starf; &starf; &starf;</p>
+      <p class="star" ng-show="movie.rating == 4">&starf; &starf; &starf; &starf; &star;</p>
+      <p class="star" ng-show="movie.rating == 3">&starf; &starf; &starf; &star; &star;</p>
+      <p class="star" ng-show="movie.rating == 2">&starf; &starf; &star; &star; &star;</p>
+      <p class="star" ng-show="movie.rating == 1">&starf; &star; &star; &star; &star;</p>
+      <p ng-bind="movie.genre | truncate : 'p'"></p>
+      <p ng-bind="movie.review | truncate : 'p'"></p>
     </div>
   </div>
 </section>
