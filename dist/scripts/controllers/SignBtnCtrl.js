@@ -5,6 +5,7 @@
 
   function SignBtnCtrl(PopUp, UserAuth) {
     this.registerUser = PopUp.registerUser;
+    this.openModal = PopUp.openModal;
     this.userAuth = UserAuth;
   }
 })();

@@ -115,10 +115,6 @@ body > .container {
   padding: 0 15px;
 }
 
-#main .top-bar form {
-  width: 50%;
-}
-
 /* User Auth */
 #user-auth {
   float: right;
@@ -164,4 +160,18 @@ body > .container {
 #logInErr,
 #signOutbtn {
   display: none;
+}
+
+/* User Page */
+#userPage form {
+  padding: 0 15px;
+}
+
+/* Footer */
+footer {
+  margin: 50px 0 60px 0;
+  font-size: 80%;
+  font-weight: 100;
+  letter-spacing: 1.3px;
+  text-align: center;
 }
