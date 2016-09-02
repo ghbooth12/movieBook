@@ -4,10 +4,13 @@
 </div>
 
 <section id='userPage'>
-  <div class="clearfix top-bar">
-    <form class="pull-right" role="search">
+  <div class="clearfix">
+    <form role="search">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search by title" ng-model="userPage.searchWord">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+          <input type="text" class="form-control" placeholder="Search by title" ng-model="userPage.searchWord">
+        </div>
       </div>
     </form>
   </div>

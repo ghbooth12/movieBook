@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Moviebook</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
@@ -25,12 +25,13 @@
                   <label class="sr-only" for="password">Password</label>
                   <input type="password" id="password" class="form-control" placeholder="Password" ng-model="signBtn.password">
                 </div>
-                <input type="submit" id="sign" class="btn btn-default" value="Sign In">
+                <input type="submit" id="sign" class="btn btn-primary" value="Sign In">
                 <a ng-click="signBtn.registerUser()" class="btn btn-default">Register</a>
               </form>
               <span id="logInErr" class="input-err">Email or Password Not Found</span>
             </div> <!-- /#signInbtn -->
             <div id="signOutbtn">
+              <a ng-click="signBtn.openModal()" class="btn btn-success">Add Movie</a>
               <a class="btn btn-primary" ui-sref="userPage">My Page</a>
               <a class="btn btn-default" ng-click="signBtn.userAuth.logOut()">Sign Out</a>
             </div> <!-- /#signOutbtn -->
@@ -39,6 +40,11 @@
       </div> <!-- /.row -->
 
       <ui-view></ui-view>
+
+      <footer>
+        <p>Made by TheCodeBooth.</p>
+        <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+      </footer>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
