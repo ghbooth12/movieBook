@@ -9,7 +9,7 @@
     popUp.openModal = function() {
       $uibModal
         .open({
-          templateUrl: 'templates/modal.html',
+          templateUrl: 'templates/modalAddMovie.html',
           controller: 'ModalCtrl as modal'
         })
         .result.then(function(result) {
