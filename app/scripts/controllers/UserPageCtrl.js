@@ -5,16 +5,16 @@
 
   function UserPageCtrl(Movie, $cookies) {
     this.currentUser = $cookies.get('currentUser');
-    
-    var movies = Movie.all;
-    console.log(movies.length);
 
-    this.movieArr = [];
-
-    for (var i = 0; i < movies.length; i++) {
-      if (movies[i].username === this.currentUser) {
-        this.movieArr.push(movies[i]);
+    this.getReviews = function() {
+      var arr = [];
+      var movies = Movie.all;
+      for (var i = 0; i < movies.length; i++) {
+        if (movies[i].username === this.currentUser) {
+          arr.push(movies[i]);
+        }
       }
+      return arr;
     }
   }
 })();

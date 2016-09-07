@@ -1,6 +1,6 @@
 <div class="well">
   <h4><span class="glyphicon glyphicon-user"></span> Email Address: {{ userPage.currentUser }}</h4>
-  <p style="font-size: 2rem;">You have <b>{{ userPage.movieArr.length }}</b> movie reviews.</p>
+  <p style="font-size: 2rem;">You have <b>{{ userPage.getReviews().length }}</b> movie reviews.</p>
 </div>
 
 <section id='userPage'>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="clearfix">
-    <div class="col-sm-4 movie-item" ng-repeat="movie in userPage.movieArr | search : userPage.searchWord">
+    <div class="col-sm-4 movie-item" ng-repeat="movie in userPage.getReviews() | search : userPage.searchWord">
       <img class="poster" src="{{ movie.img_src }}" alt="{{ movie.title }}">
       <h4 ng-bind="movie.title | truncate : 'h'"></h4>
       <p class="star" ng-show="movie.rating == 5">&starf; &starf; &starf; &starf; &starf;</p>
