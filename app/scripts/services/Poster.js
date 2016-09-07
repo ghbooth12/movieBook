@@ -7,7 +7,7 @@
     var poster = {};
 
     poster.createUrl = function(movieInfo) {
-      var base = 'http://api.themoviedb.org/3';
+      var base = 'https://api.themoviedb.org/3';
       var service = '/search/movie';
       var apiKey = '75eb3f0904ccb7d88cdb1b78a29f23b3';
       var title = movieInfo.title;
@@ -46,7 +46,7 @@
         errNotFound.style.display = "block";
         errForMany.style.display = "none";
       } else {  // one or more movies found
-        var output = 'http://image.tmdb.org/t/p/w500';
+        var output = 'https://image.tmdb.org/t/p/w500';
         errNotFound.style.display = "none";
 
         // get not more than 12 movies
